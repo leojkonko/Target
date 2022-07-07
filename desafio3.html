@@ -1,0 +1,307 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="">
+
+    <title>Desafio 3</title>
+      
+    <div class="container mt-5">
+      <div class="row">
+        <h1 class="d-flex justify-content-center align-items-center col-md-12 mb-5">Percentual por estado:</h1>
+        <div class="d-flex justify-content-center align-items-center col-md-3">
+            <h2>SP</h2>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center col-md-2">
+            <h2>RJ</h2>
+        </div>
+        <div class="d-flex justify-content-center align-items-center col-md-2">
+            <h2>MG</h2>
+        </div>
+        <div class="d-flex justify-content-center align-items-center col-md-2">
+            <h2>ES</h2>
+        </div>
+        <div class="d-flex justify-content-center align-items-center col-md-3">
+            <h2>Outros</h2>
+        </div>
+        <h4 class="col-md-3 d-flex justify-content-center align-items-center" id="pSP"></h4>
+        <h4 class="col-md-2 d-flex justify-content-center align-items-center" id="pRJ"></h4>
+        <h4 class="col-md-2 d-flex justify-content-center align-items-center" id="pMG"></h4>
+        <h4 class="col-md-2 d-flex justify-content-center align-items-center" id="pES"></h4>
+        <h4 class="col-md-3 d-flex justify-content-center align-items-center" id="pOutros"></h4>
+      </div></br></br></br></br>
+            <h3>Valores por estado:</h3>
+          <!--  <h4>SP – R$67.836,43</br>
+                RJ – R$36.678,66</br>
+                MG – R$29.229,88</br>
+                ES – R$27.165,48</br>
+                Outros – R$19.849,53</br>
+                Total - R$180.759.98
+           </h4>-->
+           <ul>
+             <li><h4 id="l1"></h4></li>
+             <li><h4 id="l2"></h4></li>
+             <li><h4 id="l3"></h4></li>
+             <li><h4 id="l4"></h4></li>
+             <li><h4 id="l5"></h4></li>
+             <li><h4 id="l6"></h4></li>
+           </ul>
+    </div>
+          <div>
+            <ul>
+            <li class="my-3"><input type="" placeholder="Alterar valor de SP" id="input1" name="">
+            <button class="btn btn-primary ml-3" id="btn1" onclick="click1()">Clique Aqui!</button></li>
+
+            <li class="my-3"><input type="" placeholder="Alterar valor de RJ" id="input2" name="">
+            <button class="btn btn-primary ml-3" id="btn2" onclick="click2()">Clique Aqui!</button></li>
+
+            <li class="my-3"><input type="" placeholder="Alterar valor de MG" id="input3" name="">
+            <button class="btn btn-primary ml-3" id="btn3" onclick="click3()">Clique Aqui!</button></li>
+
+            <li class="my-3"><input type="" placeholder="Alterar valor de ES" id="input4" name="">
+            <button class="btn btn-primary ml-3" id="btn4" onclick="click4()">Clique Aqui!</button></li>
+
+            <li class="my-3"><input type="" placeholder="Alterar de Outros" id="input5" name="">
+            <button class="btn btn-primary ml-3" id="btn5" onclick="click5()">Clique Aqui!</button></li>
+          </ul>
+          </div>
+
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+    /*SP – R$67.836,43
+    RJ – R$36.678,66
+    MG – R$29.229,88
+    ES – R$27.165,48
+    Outros – R$19.849,53*/
+
+
+var sp = 67836.43
+var rj = 36678.66
+var mg = 29229.88
+var es = 27165.48
+var outros = 19849.53
+
+var totalCONTA = es + sp + rj + mg + es + outros
+var total = totalCONTA.toFixed(2)
+
+document.getElementById('l1').innerHTML ='R$' +  sp
+document.getElementById('l2').innerHTML ='R$' +  rj
+document.getElementById('l3').innerHTML ='R$' +  mg
+document.getElementById('l4').innerHTML ='R$' +  es
+document.getElementById('l5').innerHTML ='R$' +  outros
+document.getElementById('l6').innerHTML ='R$' +  total
+
+
+
+var SP = (sp * 100) / total
+document.getElementById('pSP').innerHTML = SP.toFixed(2) + "%"
+
+var RJ = (rj * 100) / total
+document.getElementById('pRJ').innerHTML = RJ.toFixed(2) + "%"
+
+var MG = (mg * 100) / total
+document.getElementById('pMG').innerHTML = MG.toFixed(2) + "%"
+
+var ES = (es * 100) / total
+document.getElementById('pES').innerHTML = ES.toFixed(2) + "%"
+
+var OUTROS = (outros * 100) / total
+document.getElementById('pOutros').innerHTML = OUTROS.toFixed(2) + "%"
+
+
+
+
+
+function click1() {alteraValor1()}
+function click2() {alteraValor2()}
+function click3() {alteraValor3()}
+function click4() {alteraValor4()}
+function click5() {alteraValor5()}
+
+
+
+
+
+//              funçoes
+
+function alteraValor1() {
+    sp = document.getElementById('input1').value
+    //console.log(sp)
+
+
+document.getElementById('l1').innerHTML ='R$' +  sp
+document.getElementById('l2').innerHTML ='R$' +  rj
+document.getElementById('l3').innerHTML ='R$' +  mg
+document.getElementById('l4').innerHTML ='R$' +  es
+document.getElementById('l5').innerHTML ='R$' +  outros
+var total1 = parseFloat(sp) + parseFloat(rj) + parseFloat(mg) + parseFloat(es) + parseFloat(outros)
+
+document.getElementById('l6').innerHTML ='R$' +  total1
+
+var SP = (sp * 100) / total1
+document.getElementById('pSP').innerHTML = SP.toFixed(2) + "%"
+
+var RJ = (rj * 100) / total1
+document.getElementById('pRJ').innerHTML = RJ.toFixed(2) + "%"
+
+var MG = (mg * 100) / total1
+document.getElementById('pMG').innerHTML = MG.toFixed(2) + "%"
+
+var ES = (es * 100) / total1
+document.getElementById('pES').innerHTML = ES.toFixed(2) + "%"
+
+var OUTROS = (outros * 100) / total1
+document.getElementById('pOutros').innerHTML = OUTROS.toFixed(2) + "%"
+}
+
+
+function alteraValor2() {
+    rj = document.getElementById('input2').value
+    //console.log(sp)
+
+
+document.getElementById('l1').innerHTML ='R$' +  sp
+document.getElementById('l2').innerHTML ='R$' +  rj
+document.getElementById('l3').innerHTML ='R$' +  mg
+document.getElementById('l4').innerHTML ='R$' +  es
+document.getElementById('l5').innerHTML ='R$' +  outros
+var total2 = parseFloat(sp) + parseFloat(rj) + parseFloat(mg) + parseFloat(es) + parseFloat(outros)
+
+document.getElementById('l6').innerHTML ='R$' +  total2
+
+var SP = (sp * 100) / total2
+document.getElementById('pSP').innerHTML = SP.toFixed(2) + "%"
+
+var RJ = (rj * 100) / total2
+document.getElementById('pRJ').innerHTML = RJ.toFixed(2) + "%"
+
+var MG = (mg * 100) / total2
+document.getElementById('pMG').innerHTML = MG.toFixed(2) + "%"
+
+var ES = (es * 100) / total2
+document.getElementById('pES').innerHTML = ES.toFixed(2) + "%"
+
+var OUTROS = (outros * 100) / total2
+document.getElementById('pOutros').innerHTML = OUTROS.toFixed(2) + "%"
+}
+
+
+
+function alteraValor3() {
+    mg = document.getElementById('input3').value
+    //console.log(sp)
+
+
+document.getElementById('l1').innerHTML ='R$' +  sp
+document.getElementById('l2').innerHTML ='R$' +  rj
+document.getElementById('l3').innerHTML ='R$' +  mg
+document.getElementById('l4').innerHTML ='R$' +  es
+document.getElementById('l5').innerHTML ='R$' +  outros
+var total3 = parseFloat(sp) + parseFloat(rj) + parseFloat(mg) + parseFloat(es) + parseFloat(outros)
+
+document.getElementById('l6').innerHTML ='R$' +  total3
+
+var SP = (sp * 100) / total3
+document.getElementById('pSP').innerHTML = SP.toFixed(2) + "%"
+
+var RJ = (rj * 100) / total3
+document.getElementById('pRJ').innerHTML = RJ.toFixed(2) + "%"
+
+var MG = (mg * 100) / total3
+document.getElementById('pMG').innerHTML = MG.toFixed(2) + "%"
+
+var ES = (es * 100) / total3
+document.getElementById('pES').innerHTML = ES.toFixed(2) + "%"
+
+var OUTROS = (outros * 100) / total3
+document.getElementById('pOutros').innerHTML = OUTROS.toFixed(2) + "%"
+}
+
+
+
+
+function alteraValor4() {
+    es = document.getElementById('input4').value
+    //console.log(sp)
+
+
+document.getElementById('l1').innerHTML ='R$' +  sp
+document.getElementById('l2').innerHTML ='R$' +  rj
+document.getElementById('l3').innerHTML ='R$' +  mg
+document.getElementById('l4').innerHTML ='R$' +  es
+document.getElementById('l5').innerHTML ='R$' +  outros
+var total2 = parseFloat(sp) + parseFloat(rj) + parseFloat(mg) + parseFloat(es) + parseFloat(outros)
+
+document.getElementById('l6').innerHTML ='R$' +  total2
+
+var SP = (sp * 100) / total2
+document.getElementById('pSP').innerHTML = SP.toFixed(2) + "%"
+
+var RJ = (rj * 100) / total2
+document.getElementById('pRJ').innerHTML = RJ.toFixed(2) + "%"
+
+var MG = (mg * 100) / total2
+document.getElementById('pMG').innerHTML = MG.toFixed(2) + "%"
+
+var ES = (es * 100) / total2
+document.getElementById('pES').innerHTML = ES.toFixed(2) + "%"
+
+var OUTROS = (outros * 100) / total2
+document.getElementById('pOutros').innerHTML = OUTROS.toFixed(2) + "%"
+}
+
+
+
+function alteraValor5() {
+    outros = document.getElementById('input5').value
+    //console.log(sp)
+
+
+document.getElementById('l1').innerHTML ='R$' +  sp
+document.getElementById('l2').innerHTML ='R$' +  rj
+document.getElementById('l3').innerHTML ='R$' +  mg
+document.getElementById('l4').innerHTML ='R$' +  es
+document.getElementById('l5').innerHTML ='R$' +  outros
+var total2 = parseFloat(sp) + parseFloat(rj) + parseFloat(mg) + parseFloat(es) + parseFloat(outros)
+
+document.getElementById('l6').innerHTML ='R$' +  total2
+
+var SP = (sp * 100) / total2
+document.getElementById('pSP').innerHTML = SP.toFixed(2) + "%"
+
+var RJ = (rj * 100) / total2
+document.getElementById('pRJ').innerHTML = RJ.toFixed(2) + "%"
+
+var MG = (mg * 100) / total2
+document.getElementById('pMG').innerHTML = MG.toFixed(2) + "%"
+
+var ES = (es * 100) / total2
+document.getElementById('pES').innerHTML = ES.toFixed(2) + "%"
+
+var OUTROS = (outros * 100) / total2
+document.getElementById('pOutros').innerHTML = OUTROS.toFixed(2) + "%"
+}
+
+</script>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
